@@ -13,15 +13,16 @@ const Deskripsi = () => {
       {/* About Section */}
       <section
         id="about"
-        className="py-16 bg-[#010101] px-6 lg:px-20 text-center lg:text-left"
+        className="py-20 bg-[#010101] px-6 lg:px-20 text-center lg:text-left"
       >
         <div className="max-w-4xl mx-auto">
-          <div
-            className="w-full h-auto bg-cover bg-center aspect-video lg:aspect-[16/9]"
-            style={{
-              backgroundImage: `url(${about})`,
-            }}
-          ></div>
+          <div className="w-full h-auto">
+            <img
+              src={about}
+              alt="About Image"
+              className="w-full h-auto object-contain rounded-lg shadow-lg"
+            />
+          </div>
         </div>
       </section>
 
