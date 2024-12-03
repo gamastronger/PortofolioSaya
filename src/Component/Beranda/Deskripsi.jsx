@@ -17,11 +17,14 @@ const Deskripsi = () => {
       >
         <div className="max-w-4xl mx-auto">
           <div
-            className="w-full h-[1200px] bg-cover bg-center"
-            style={{ backgroundImage: `url(${about})` }}
+            className="w-full h-auto bg-cover bg-center aspect-video lg:aspect-[16/9]"
+            style={{
+              backgroundImage: `url(${about})`,
+            }}
           ></div>
         </div>
       </section>
+
 
       {/* Hero Section */}
       <header className="relative bg-[#240000] text-white h-[60vh] flex items-center justify-center px-12 lg:px-12">
