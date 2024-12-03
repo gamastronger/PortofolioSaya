@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import bgwelcome from "../../assets/imgdibimbing/bgwelcome.jpg";
+import bgwelcome from "../../assets/imgdibimbing/bgwelcome2.png";
 import gema from "../../assets/imgdibimbing/gama.png";
 
 const Welcome = () => {
