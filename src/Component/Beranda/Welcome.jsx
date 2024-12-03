@@ -5,7 +5,6 @@ import gema from "../../assets/imgdibimbing/gama.png";
 const Welcome = () => {
   const [dots, setDots] = useState([]);
   const [textVisible, setTextVisible] = useState(true);
-  const [setSideElementsVisible] = useState(true);
   const [currentWord, setCurrentWord] = useState("Designer");
   const words = ["Designer", "Web Development"];
 
@@ -33,15 +32,13 @@ const Welcome = () => {
     return () => clearInterval(interval);
   }, []);
 
-  // Detect scroll and update text and side elements visibility
+  // Detect scroll and update text visibility
   const handleScroll = () => {
     const scrollY = window.scrollY;
     if (scrollY > 200) {
       setTextVisible(false); // Hide text after scroll
-      setSideElementsVisible(false); // Hide side elements after scroll
     } else {
       setTextVisible(true); // Show text when at top
-      setSideElementsVisible(true); // Show side elements when at top
     }
   };
 
@@ -78,30 +75,17 @@ const Welcome = () => {
 
       {/* Main Content */}
       <div className="container mx-auto flex flex-col lg:flex-row items-center justify-center lg:gap-12">
-        {/* Left Section: Image */}
-        <div
-          className={`lg:w-1/2 relative lg:h-[400px] lg:mt-0 transition-all duration-1000 ease-out order-2 lg:order-1 ${
-            textVisible ? "opacity-100 scale-100" : "opacity-0 scale-90"
-          }`}
-        >
-          <img
-            src={gema}
-            alt="Welcome Background"
-            className="w-[80%] lg:w-[70%] mx-auto object-cover rounded-lg shadow-lg"
-          />
-        </div>
-
         {/* Right Section: Text */}
         <div
-          className={`lg:w-1/2 text-left transition-all duration-1000 ease-out order-1 lg:order-2 ${
+          className={`w-full lg:w-1/2 text-center lg:text-left transition-all duration-1000 ease-out order-1 lg:order-2 ${
             textVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
-          <h1 className="text-3xl lg:text-4xl font-sans-serif text-white mb-3 leading-snug tracking-wide">
-            Im <span className="text-[#FF0000]">Refa Setyagama</span>
+          <h1 className="text-2xl md:text-3xl lg:text-4xl font-sans-serif text-white mb-3 leading-snug tracking-wide">
+            I'm <span className="text-[#FF0000]">Refa Setyagama</span>
           </h1>
-          <p className="text-base lg:text-lg text-gray-300 mb-5">
-            A student who has a hobby{" "}
+          <p className="text-sm md:text-base lg:text-lg text-gray-300 mb-5">
+            A student who has a hobby{' '}
             <span
               className="text-[#FF0000] font-bold"
               style={{
@@ -113,7 +97,7 @@ const Welcome = () => {
             </span>
             .
           </p>
-          <div className="flex justify-start gap-4">
+          <div className="flex justify-center lg:justify-start gap-4">
             {/* Button: Hubungi Saya */}
             <a
               href="https://wa.me/6283112080715"
@@ -132,6 +116,19 @@ const Welcome = () => {
               Lihat Portofolio
             </a>
           </div>
+        </div>
+
+        {/* Left Section: Image */}
+        <div
+          className={`w-full lg:w-1/2 relative lg:h-[400px] mt-4 lg:mt-0 transition-all duration-1000 ease-out order-2 lg:order-1 ${
+            textVisible ? "opacity-100 scale-100" : "opacity-0 scale-90"
+          }`}
+        >
+          <img
+            src={gema}
+            alt="Welcome Background"
+            className="w-[60%] sm:w-[50%] lg:w-[70%] mx-auto object-cover rounded-lg shadow-lg"
+          />
         </div>
       </div>
 
